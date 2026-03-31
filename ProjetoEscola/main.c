@@ -6,12 +6,13 @@
 typedef struct aluno{
     int matricula;
     char sexo;
+    int ativo; //1 = ativo, -1 = inativo
 } aluno;
 
 
 int main(void){
 
-    int listaAluno[tamAL];
+    aluno listaAluno[tamAL];
     int opc;
     int sair = 0; //falso
     int qtdAL = 0;   
@@ -63,9 +64,10 @@ int main(void){
                                 if(matricula < 0){
                                     printf("Matricula invalida\n");
                                 }else{                                    
-                                    listaAluno[qtdAL] = matricula;
+                                    listaAluno[qtdAL].matricula = matricula;
+                                    listaAluno[qtdAL].ativo = 1;                                    
                                     qtdAL++;
-                                    printf("Aluno cadastrado com sucesso")
+                                    printf("Aluno cadastrado com sucesso");
                                 }
                             break;                           
                         }
@@ -76,11 +78,33 @@ int main(void){
                                 printf("Lista vazia!\n");
                             }else{
                                 for(int i =0; i < qtdAL; i++)
-                                    printf("Matrícula: %d\n", listaAluno[i]);
+                                    if(listaAluno[i].ativo) //verifica se o aluno está ativo
+                                        printf("Matrícula: %d\n", listaAluno[i].matricula);
                         }
                     }
                         case 3:{
-                            
+                            break;
+                        }
+                        case 4:{
+                                printf("Digite a matricula:\n");
+                                int matricula;
+                                scanf("%d", &matricula);
+                                int achou = 0; //flag para verificar se encontrou o aluno
+                                if(matricula < 0){
+                                    printf("Matricula invalida\n");
+                                }else{
+                                    for(int i = 0; i < qtdAL; i++)
+                                        if(listaAluno[i].matricula == matricula){ //exclusão lógica
+                                            listaAluno[i].ativo = -1; //inativo
+                                            achou = 1; //aluno encontrado
+                                            break;
+                                        }
+                                    if(achou)
+                                        printf("Aluno excluido com sucesso\n");
+                                    else
+                                    printf("Aluno não encontrado\n");
+                                }
+                                break;                          
                         }
                      
                 } 
