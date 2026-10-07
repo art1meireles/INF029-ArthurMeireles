@@ -1,4 +1,4 @@
-// #################################################
+// ################################################
 //  Instituto Federal da Bahia
 //  Salvador - BA
 //  Curso de Análise e Desenvolvimento de Sistemas http://ads.ifba.edu.br
@@ -10,10 +10,10 @@
 //  O aluno deve preencher seus dados abaixo, e implementar as questões do trabalho
 
 //  ----- Dados do Aluno -----
-//  Nome:
-//  email:
-//  Matrícula:
-//  Semestre:
+//  Nome: Arthur Meireles Dos Santos
+//  email: arthurmeireles935@gmail.com
+//  Matrícula: 20252160011
+//  Semestre: 2026.1
 
 //  Copyright © 2016 Renato Novais. All rights reserved.
 // Última atualização: 07/05/2021
@@ -44,11 +44,11 @@ int somar(int x, int y); //função utilizada para testes
 int fatorial(int x); //função utilizada para testes
 int q1(char data[]);
 DiasMesesAnos q2(char datainicial[], char datafinal[]);
-int q3(char *texto, char c, int isCaseSensitive);
-int q4(char *strTexto, char *strBusca, int posicoes[30]);
+int q3(char texto[], char c, int isCaseSensitive);
+int q4(char strTexto[], char strBusca[], int posicoes[30]);
 int q5(int num);
 int q6(int numerobase, int numerobusca);
-int q7(char matriz[8][10], char palavra[5]);
+int q7(char matriz[8][10], char palavra[6]);
 DataQuebrada quebraData(char data[]);
 
 #endif  // MAIN_H
